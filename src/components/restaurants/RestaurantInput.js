@@ -4,9 +4,13 @@ class RestaurantInput extends Component {
   // constructor(props) {
     // super(props);
   // };
+  
   state = {
+    
     text: ''
+
   };
+
   handleOnChange(event) {
     this.setState({
       text: event.target.value,
@@ -21,7 +25,8 @@ class RestaurantInput extends Component {
   }
 
   render() {
-    // debugger
+    // debugge
+    console.log('text state', this.state)
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>

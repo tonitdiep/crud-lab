@@ -7,14 +7,30 @@ export default function manageRestaurants(state = {
         switch (action.type) {
         
             case 'ADD_RESTAURANT':
-                console.log('add restaurant', action.type)
+                console.log('add r state', state)
+                console.log('add r action', action.type)
                 const restaurant = { text: action.text, id: cuidFn() };
+                console.log('add rest', state)
+                console.log('adding R', action )
                 return {
                     
                     ...state, 
-                    restaurants: [...state.restaurant, restaurant]
+                    restaurants: [...state.restaurants, restaurant]
                 }
+            
+            case 'DELETE_RESTAURANT':
+                const restaurants = state.restaurants.filter((r) => { 
+                    console.log('restaurant', r)
+                    return r.id != action.id
+                
+                 } )
+                // console.log('DELETE state', state)
+                // console.log('DELETE restaurant', restaurants)
+                return {
 
+                    restaurants
+            
+                }
             default: 
                 return state;
         }
