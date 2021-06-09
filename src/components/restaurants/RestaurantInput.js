@@ -26,7 +26,7 @@ class RestaurantInput extends Component {
 
   render() {
     // debugge
-    console.log('text state', this.state)
+
     return (
       <div>
         <hr/>

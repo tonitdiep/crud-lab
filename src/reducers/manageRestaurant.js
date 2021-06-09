@@ -20,29 +20,35 @@ export default function manageRestaurants(state = {
             
             case 'DELETE_RESTAURANT':
                 const restaurants = state.restaurants.filter((r) => { 
-                    console.log('restaurant', r)
+                    console.log('restaurant id', action)
                     return r.id !== action.id
                 
                  } )
                 // console.log('DELETE state', state)
                 // console.log('DELETE restaurant', restaurants)
                 return {
-
-                    restaurants
-            
+                    ...state, restaurants
+                    // restaurants
+                    
                 }
                 case 'ADD_REVIEW':
+                
                     const review = { text: action.review.text, restaurantId: action.review.restaurantId, id: cuidFn()};
                     console.log('add state', state)
-                    console.log('add action', action)
-                    return {...state, reviews: [...state.reviews, review]
-                    }
+                    // console.log('add action', action)
+                    return {...state, reviews: [...state.reviews, review]}
+                    // console.log({...state, reviews: [...state.reviews, review]})
                 
                 case 'DELETE_REVIEW':
-                    const reviews = state.reviews.filter(review => review.id !== action.id);
-                        console.log('DELETE rev STATE', state)
-                        console.log('DELETE REV reviews', reviews)
+                    const reviews = state.reviews.filter(review => {
+                        // console.log('DELETE rev action', action)
+                        // console.log('DELETE REV object', review)
+                        return review.id !== action.id
+                    
+                    });
+
                     return {...state, reviews}
+
             default: 
                 return state;
         }
