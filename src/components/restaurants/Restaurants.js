@@ -17,10 +17,12 @@ class Restaurants extends Component {
         )
     });
     return(
+      <div>
       <ul>
         Restaurants Component
         {restaurantList}
       </ul>
+      </div>
     );
   }
 };

@@ -29,6 +29,8 @@ class RestaurantInput extends Component {
     console.log('text state', this.state)
     return (
       <div>
+        <hr/>
+        {/* <br/> */}
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
         Restaurant Input
         <input 
